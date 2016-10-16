@@ -1,0 +1,15 @@
+{
+  "name": "go_back_n",
+  "version": "1.0.0",
+  "description": "Simulation Of Sliding Window",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ameerthehacker",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.0"
+  }
+}

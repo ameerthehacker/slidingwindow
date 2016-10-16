@@ -1,0 +1,11 @@
+body{
+    margin-top:60px;
+}
+#chat-box{
+    display: block;
+    height:100%;
+    width:100%;
+    border: 2px dashed blue;
+    overflow-y: auto;
+    padding-left: 10px;
+}
