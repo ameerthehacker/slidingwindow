@@ -29,7 +29,7 @@ app.get('/reciever',function(req,res){
     res.sendFile(__dirname + '/reciever.html');
 });
 
-http.listen(5555,function(){
+http.listen(proc.env.PORT|5555,function(){
     console.log('Listening on port 5555');
 });
 
