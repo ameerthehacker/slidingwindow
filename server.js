@@ -1,17 +1,35 @@
 /// <reference path="typings/index.d.ts" />
 
-var http=require('http');
 var express=require('express');
-var app=express(http);
+var app=express();
+var http=require('http').Server(app);
+var clients=require('socket.io')(http);
+
+clients.on('connection',function(client){
+    console.log('Some one connected');
+    client.on('snd',function(frame){
+        clients.emit('rcv',frame);
+    });
+    client.on('sndack',function(frame){
+        clients.emit('rcvack',frame);
+    });
+    client.on('out_order_rcv',function(){
+        clients.emit('out_order_snt',{});
+    });
+});
 
 
 app.use('/assests',express.static(__dirname + '/assests'));
 
-app.get('/',function(req,res){
-    res.sendFile(__dirname + '/index.html');
+app.get('/sender',function(req,res){
+    res.sendFile(__dirname + '/sender.html');
 });
 
-app.listen(5555,function(){
+app.get('/reciever',function(req,res){
+    res.sendFile(__dirname + '/reciever.html');
+});
+
+http.listen(5555,function(){
     console.log('Listening on port 5555');
 });
 

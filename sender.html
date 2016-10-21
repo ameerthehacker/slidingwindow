@@ -1,0 +1,85 @@
+<html>
+
+<head>
+	<!--CSS-->
+	<link rel="stylesheet" href="/assests/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/assests/css/style.css" />
+	<!--Javascript-->
+	<script src="/assests/js/jquery.min.js"></script>
+	<script src="/assests/js/bootstrap.min.js"></script>
+	<script src="/assests/js/socket.io.js"></script>
+	<script src="/assests/js/sender.js"></script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+			<div class="col-lg-4">
+				<div class="well">
+					<form action="" class="form-horizontal">
+						<div class="form-group">
+							<label for="" class="control-label col-lg-6">Reciever Window Size</label>
+							<div class="col-lg-4">
+								<input id="rws" type="text" class="form-control" placeholder="RWS" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-lg-6">Frames Per Second</label>
+							<div class="col-lg-4">
+								<input id="fps" type="text" class="form-control" placeholder="FPS" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-12">
+								<input id="btnSet" type="button" class="form-control btn btn-primary" value="Set" placeholder="DATA" />
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="well">
+					<form action="" class="form-horizontal">
+						<div class="form-group">
+							<label for="" class="control-label col-lg-6">Sequence Number</label>
+							<div class="col-lg-4">
+								<input id="frame-seq" type="text" class="form-control" placeholder="SEQ" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-lg-6">Data</label>
+							<div class="col-lg-4">
+								<input id="frame-data" type="text" class="form-control" placeholder="DATA" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-12">
+								<input id="btnAdd" type="button" class="form-control btn btn-success" value="Add"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-12">
+								<input id="btnSend" type="button" class="form-control btn btn-danger" value="Send"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="well text-center">
+					<h1 class="" id="timer">0</h1>
+				</div>
+			</div>
+			
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="well">
+						<ul id="frames"></ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="well">
+						<ul id="ackframes"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>
